@@ -4,7 +4,7 @@
 
 export const environment = {
   URL:'https://api.shrtco.de/v2/',
-  production: false
+  production: true
 };
 
 /*
