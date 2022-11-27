@@ -1,8 +1,8 @@
 <div class="container">
   <div class="side-nav" id="mySidenav">
-    <img (click)="closeNav()" class="close-icon" src="assets/images/icons/close.png">
+    <img (click)="closeNav()" class="close-icon" src="../../../assets/images/close.png">
     <div  (click)="rout(item)" *ngFor="let item of navList;index as i">
-      <a  [ngClass]="item.href==currentNav?'active':''">{{item.title}}</a>
+      <a  (click)="scrollToElement(item.target)" [ngClass]="item.href==currentNav?'active':''">{{item.title}}</a>
     </div>
 
   </div>
@@ -16,13 +16,14 @@
 
         <ul class="flex">
 
-          <li (click)="rout(item)" *ngFor="let item of navList;index as i"><a
+          <li (click)="rout(item)" *ngFor="let item of navList;index as i">
+            <a (click)="scrollToElement(item.target)"
             [ngClass]="item.href==currentNav?'active':''">{{item.title}}</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="body content">
+    <div class="body content" id="home">
       <div class="content_header">
         <div class="big_title"> Minimalist Room</div>
         <p>It is a long established fact that a reader will be distracted
@@ -35,7 +36,7 @@
       <div class="flex info-list">
         <div class="info">
           <div>
-            <div class="info_title">Project Overview</div>
+            <div class="info_title" id="about">Project Overview</div>
             <div class="info_content">Online learning with us does not interfere with your daily life. because learning
               can be
               done anytime and anywhere. Online learning with us does not interfere with your daily life. because
@@ -71,25 +72,25 @@
       </div>
 
 
-      <div class="images">
+      <div class="images" id="service">
         <div class="flex two-image">
           <div class="half">
             <img src="assets/images/image_2ch.png" alt="img">
           </div>
 
-          <div class="half">
+          <div class="half half2">
             <img src="assets/images/image_3t.png" alt="img">
           </div>
         </div>
 
         <img class="full_img" src="assets/images/image_4s.png">
 
-        <div class="flex two-image">
+        <div class="flex two-image" id="team">
           <div class="half">
             <img src="assets/images/image_5s.png" alt="img">
           </div>
 
-          <div class="half">
+          <div class="half half2">
             <img src="assets/images/image_6w.png" alt="img">
           </div>
         </div>
@@ -98,7 +99,7 @@
 
     </div>
 
-    <div class="footer contact">
+    <div class="footer contact" id="contact">
       <div class="flex first_part">
         <div class="left_text">
           let's discuss making your interior like a dream place!
@@ -128,16 +129,16 @@
             <div class="right">
               <div clsss="title"> Follow us On</div>
               <div class="icons">
-                <a class="circle" href="https://www.facebook.com/">
+                <a class="circle" target="_blank" href="https://www.facebook.com/">
                   <img src="assets/images/icons/facebook.png">
                 </a>
-                <a class="circle" href="https://www.instagram.com/">
+                <a class="circle" target="_blank" href="https://www.instagram.com/">
                   <img src="assets/images/icons/instagram.png">
                 </a>
-                <a class="circle" href="https://www.tiktok.com/">
+                <a class="circle" target="_blank" href="https://www.tiktok.com/">
                   <img src="assets/images/icons/tiktok.png">
                 </a>
-                <a class="circle" href="https://www.youtube.com/">
+                <a class="circle" target="_blank" href="https://www.youtube.com/">
                   <img src="assets/images/icons/youtube.png">
                 </a>
 

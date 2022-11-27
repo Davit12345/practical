@@ -11,27 +11,32 @@ export class RoomComponent implements OnInit {
     {
       title: 'Home',
       active: false,
-      href: 'room',
+      href: 'home',
+      target: 'home',
     },
     {
       title: 'About Us',
       active: false,
       href: 'about',
+      target: 'about',
     },
     {
       title: 'Services',
       active: false,
       href: 'service',
+      target: 'service',
     },
     {
       title: 'Our Teams',
       active: false,
       href: 'team',
+      target: 'team',
     },
     {
       title: 'Contact Us',
       active: true,
-      href: 'content',
+      href: 'contact',
+      target: 'contact',
     },
   ]
 
@@ -58,5 +63,10 @@ export class RoomComponent implements OnInit {
    }
   }
 
+  scrollToElement(element :any): void {
+    console.log(element);
+    // element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    (document.getElementById(element) as HTMLElement).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 
+  }
 }
